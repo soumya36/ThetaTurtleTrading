@@ -8,6 +8,7 @@
 | `1_get_prices.py` | Fetch live prices, ticker data, and candles |
 | `2_wrangle_data.py` | Candles → pandas, technical indicators (SMA/EMA/RSI/Bollinger), multi-symbol merge, CSV export |
 | `3_orderbook_and_trades.py` | Order book depth analysis, trade history, VWAP, minute-bar aggregation |
+| `4_tick_sizes.py` | Tick sizes, quote increments, and min order sizes for all instruments |
 
 ## Setup
 
@@ -15,7 +16,7 @@
 pip install requests pandas openpyxl
 ```
 
-All three scripts import `gemini_client.py`, so keep them in the same directory.
+All scripts import `gemini_client.py`, so keep them in the same directory.
 
 ## Usage
 
@@ -28,6 +29,9 @@ python 2_wrangle_data.py
 
 # Order book & trade analysis
 python 3_orderbook_and_trades.py
+
+# Tick sizes & instrument details
+python 4_tick_sizes.py
 ```
 
 **No API key is needed** — all endpoints used are public market data.
@@ -38,5 +42,5 @@ or the private order/fund-management endpoints (not covered in these scripts).
 ## Customisation
 
 - Change `SYMBOL` in any script to analyse a different pair (e.g. `ETHUSD`, `SOLUSD`).
-- Change `time_frame` in `candles()` to `1m`, `5m`, `15m`, `30m`, `1h`, `6h`, or `1day`.
+- Change `time_frame` in `candles()` to `1m`, `5m`, `15m`, `30m`, `1hr`, `6hr`, or `1day`.
 - Adjust indicator windows in `add_indicators()`.
